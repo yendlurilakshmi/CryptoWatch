@@ -38,6 +38,9 @@ const Carousel = () => {
     const fetchTrendingCoins = async () => {
 
         //fetch trending coins here and set it inside trending state
+        const {data} = await axios.get(TrendingCoins(currency))
+        console.log(data)
+        setTrending(data)
 
     }
 
@@ -45,6 +48,7 @@ const Carousel = () => {
 
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
+        fetchTrendingCoins();
 
 
     }, [currency])

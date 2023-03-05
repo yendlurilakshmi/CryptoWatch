@@ -9,12 +9,12 @@ const LoginPage = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // const storedCredentials = JSON.parse(localStorage.getItem('credentials'));
-    // if (storedCredentials.email === credentials.email && storedCredentials.password === credentials.password) {
-    //   history.push('/home');
-    // } else {
-    //   alert('Credentials are not valid');
-    // }
+    const storedCredentials = JSON.parse(localStorage.getItem('credentials'));
+    if (storedCredentials.email === credentials.email && storedCredentials.password === credentials.password) {
+      history.push('/home');
+    } else {
+      alert('Credentials are not valid');
+    }
     
     // get the user data from the localStorage if matches take the user to Home page
 

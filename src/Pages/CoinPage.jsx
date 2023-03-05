@@ -17,12 +17,13 @@ const CoinPage = () => {
     const { currency, symbol } = CryptoState()
 
     const fetchSingleCoin = async () => {
-        
+        const { data } =  await axios.get(SingleCoin(id));
+        setCoin(data);
         //fetch the coin data here
     }
 
     useEffect(() => {
-        
+        fetchSingleCoin();
 
     }, []);
 
@@ -98,7 +99,7 @@ const CoinPage = () => {
                         {`Market Cap: ${symbol} ${millify(coin?.market_data?.market_cap[currency.toLowerCase()])}`}
                     </StyledData>
                 </StyledSidebar>
-                <CoinChart id={id} />
+                <CoinChart id={id}/>
             </StyledContainer>
         </>
     )
